@@ -27,6 +27,10 @@ npm start        # 本地预览构建产物，http://localhost:4173
 
 ## 发布到 GitHub Pages
 
+- 线上地址：<https://bytemonsterhub.github.io/lexiversex-website/>
+- 仓库地址：<https://github.com/bytemonsterhub/lexiversex-website>
+- 安装包：<https://github.com/bytemonsterhub/lexiversex-website/releases/latest>
+
 站点由 GitHub Pages 直接从 `main` 分支的 `docs/` 目录发布，仓库里同时保存源码和构建产物。
 
 ```bash
