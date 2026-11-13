@@ -1,0 +1,356 @@
+/**
+ * 全局样式基座。
+ *
+ * 质感方向：纯黑底、超大字号、克制的灰阶、几乎不动的界面 —— 
+ * 把注意力全留给产品本身。所有间距用 rem / clamp，避免窄屏靠缩字体硬撑。
+ */
+
+:root {
+  /* 底色：真正的黑，靠层级之间的明度差（而不是边框）区分区块 */
+  --c-bg: #000000;
+  --c-bg-soft: #06060a;
+  --c-bg-lift: #0d0d12;
+  --c-bg-card: #101015;
+
+  /* 文字：苹果三段灰阶 */
+  --c-text: #f5f5f7;
+  --c-text-2: #a1a1a6;
+  --c-text-3: #6e6e73;
+
+  --c-line: rgba(255, 255, 255, 0.09);
+  --c-line-strong: rgba(255, 255, 255, 0.16);
+
+  /* 点缀：星蓝为主，琥珀作为「已完成 / 目标」的第二语义 */
+  --c-blue: #6ea8ff;
+  --c-blue-deep: #2f6fd0;
+  --c-warm: #e7b25c;
+  --c-mint: #46d8ac;
+  --c-rose: #ff7a86;
+
+  --font-sans: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI Variable Display',
+    'Segoe UI', 'PingFang SC', 'HarmonyOS Sans SC', 'Microsoft YaHei', system-ui, sans-serif;
+  --font-mono: 'SF Mono', 'JetBrains Mono', 'Cascadia Code', Consolas, monospace;
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-soft: cubic-bezier(0.4, 0, 0.2, 1);
+
+  --wrap: 1180px;
+  --pad: clamp(20px, 5vw, 40px);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  /* 锚点跳转时给固定导航条留出位置 */
+  scroll-padding-top: 88px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--c-bg);
+  color: var(--c-text);
+  font-family: var(--font-sans);
+  font-size: 17px;
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote {
+  margin: 0;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+::selection {
+  background: rgba(110, 168, 255, 0.32);
+  color: #fff;
+}
+
+/* 细滚动条，不打断视觉 */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #000;
+}
+::-webkit-scrollbar-thumb {
+  background: #232329;
+  border-radius: 10px;
+  border: 3px solid #000;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #35353d;
+}
+
+/* ---------- 布局 ---------- */
+
+.wrap {
+  width: 100%;
+  max-width: var(--wrap);
+  margin: 0 auto;
+  padding: 0 var(--pad);
+}
+
+.section {
+  position: relative;
+  padding: clamp(72px, 9vw, 118px) 0;
+}
+
+.section--tight {
+  padding: clamp(56px, 7vw, 88px) 0;
+}
+
+/* ---------- 排版 ---------- */
+
+.eyebrow {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--c-text-2);
+}
+
+/*
+ * 中文大标题的三条硬规矩：
+ * 1. 行高不能小于 1.15 —— 汉字字面率高，1.05 会上下顶到一起
+ * 2. 字距不能用英文那套 -0.03em，中文会挤成墨块
+ * 3. 加 text-wrap: balance，避免「三字一行」的尴尬断行
+ */
+.h2 {
+  font-size: clamp(32px, 4.6vw, 60px);
+  font-weight: 700;
+  line-height: 1.18;
+  letter-spacing: -0.012em;
+  text-wrap: balance;
+  margin-top: 16px;
+
+  em {
+    font-style: normal;
+    background: linear-gradient(96deg, #fff 8%, var(--c-blue) 52%, var(--c-warm) 96%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+}
+
+.h3 {
+  font-size: clamp(21px, 2.1vw, 27px);
+  font-weight: 650;
+  line-height: 1.25;
+  letter-spacing: -0.022em;
+}
+
+.lede {
+  margin-top: 22px;
+  font-size: clamp(17px, 1.5vw, 20px);
+  line-height: 1.7;
+  color: var(--c-text-2);
+  letter-spacing: -0.008em;
+  max-width: 34em;
+  text-wrap: pretty;
+}
+
+.mono {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------- 按钮 ---------- */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 13px 26px;
+  border-radius: 980px;
+  font-size: 15.5px;
+  font-weight: 550;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+  transition:
+    background-color 0.28s var(--ease-soft),
+    border-color 0.28s var(--ease-soft),
+    color 0.28s var(--ease-soft),
+    transform 0.28s var(--ease-out);
+
+  &:active {
+    transform: scale(0.975);
+  }
+}
+
+.btn--fill {
+  background: var(--c-text);
+  color: #0a0a0c;
+
+  &:hover {
+    background: #fff;
+  }
+}
+
+.btn--ghost {
+  border: 1px solid var(--c-line-strong);
+  color: var(--c-text);
+
+  &:hover {
+    border-color: rgba(255, 255, 255, 0.38);
+    background: rgba(255, 255, 255, 0.05);
+  }
+}
+
+/* 文字链：苹果的「了解更多 ›」 */
+.link-arrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--c-blue);
+
+  svg {
+    transition: transform 0.3s var(--ease-out);
+  }
+
+  &:hover svg {
+    transform: translateX(4px);
+  }
+}
+
+/* ---------- 滚动渐显 ---------- */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  transition:
+    opacity 0.9s var(--ease-out),
+    transform 0.9s var(--ease-out);
+  /* 提前一帧提升合成层，避免动画开始时掉帧 */
+  will-change: opacity, transform;
+
+  &.in {
+    opacity: 1;
+    transform: none;
+    will-change: auto;
+  }
+}
+
+/* 子元素依次入场 */
+.reveal[data-stagger] > * {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 0.85s var(--ease-out),
+    transform 0.85s var(--ease-out);
+}
+
+.reveal[data-stagger].in > * {
+  opacity: 1;
+  transform: none;
+}
+
+@for $i from 1 through 8 {
+  .reveal[data-stagger].in > *:nth-child(#{$i}) {
+    transition-delay: #{($i - 1) * 0.09}s;
+  }
+}
+
+/* 首屏内容不做滚动触发，直接入场 */
+.intro-rise {
+  animation: introRise 1.1s var(--ease-out) both;
+}
+
+@keyframes introRise {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .reveal,
+  .reveal[data-stagger] > *,
+  .intro-rise {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+/* ---------- 产品窗口框 ---------- */
+
+.shot {
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #0a0a0e;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.6),
+    0 40px 90px -30px rgba(0, 0, 0, 0.9),
+    0 12px 40px -12px rgba(0, 0, 0, 0.8);
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+  /* 顶部高光，暗示玻璃质感 */
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    border-radius: inherit;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.07), transparent 22%);
+  }
+}
