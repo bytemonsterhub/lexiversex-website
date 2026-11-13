@@ -1,7 +1,9 @@
 <script setup lang="ts">
 const year = new Date().getFullYear()
 
-const columns = [
+type FootLink = { label: string; href: string; ext?: boolean }
+
+const columns: { title: string; links: FootLink[] }[] = [
   {
     title: '产品',
     links: [
@@ -14,7 +16,12 @@ const columns = [
     title: '更多',
     links: [
       { label: '技术说明', href: '#tech' },
-      { label: '下载', href: '#download' }
+      { label: '下载', href: '#download' },
+      {
+        label: 'GitHub',
+        href: 'https://github.com/bytemonsterhub/lexiversex-website',
+        ext: true
+      }
     ]
   }
 ]
@@ -48,7 +55,12 @@ const columns = [
             <h4>{{ col.title }}</h4>
             <ul>
               <li v-for="l in col.links" :key="l.label">
-                <a :href="l.href">{{ l.label }}</a>
+                <a
+                  :href="l.href"
+                  :target="l.ext ? '_blank' : undefined"
+                  :rel="l.ext ? 'noopener noreferrer' : undefined"
+                  >{{ l.label }}</a
+                >
               </li>
             </ul>
           </div>

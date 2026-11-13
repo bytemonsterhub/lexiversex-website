@@ -13,7 +13,12 @@
       </p>
 
       <div class="dl__actions">
-        <a class="btn btn--fill btn--lg" href="https://example.com/download" rel="noopener">
+        <!-- 走 releases/latest/download：以后发新版本沿用同名资源，官网不用再改 -->
+        <a
+          class="btn btn--fill btn--lg"
+          href="https://github.com/bytemonsterhub/lexiversex-website/releases/latest/download/LexiVerseX-0.1.0.exe"
+          rel="noopener"
+        >
           <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true">
             <path
               d="M8 2v8m0 0L4.8 6.8M8 10l3.2-3.2M3 13h10"
