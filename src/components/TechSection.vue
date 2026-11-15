@@ -21,7 +21,7 @@ const cards = [
 
 const specs = [
   { k: '平台', v: 'Windows 10 / 11 · x64' },
-  { k: '安装包', v: '约 96 MB（含 44 MB 内置内容）' },
+  { k: '安装包', v: '约 81 MB（含 21 MB 原创录音）' },
   { k: '技术栈', v: 'Electron 33 · Vue 3.5 · Three.js' },
   { k: '网络', v: '运行期无需联网' }
 ]

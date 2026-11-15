@@ -7,9 +7,9 @@ const columns: { title: string; links: FootLink[] }[] = [
   {
     title: '产品',
     links: [
-      { label: '星港与真题', href: '#stations' },
+      { label: '星港与内容', href: '#stations' },
       { label: '词汇与背词', href: '#words' },
-      { label: '逐题解析', href: '#explain' }
+      { label: '解析呈现', href: '#explain' }
     ]
   },
   {
@@ -81,7 +81,7 @@ const columns: { title: string; links: FootLink[] }[] = [
       <div class="foot__bottom">
         <span>© {{ year }} LexiVerse X · 保留所有权利</span>
         <span class="foot__built">
-          真题内容著作权归原考试机构，仅面向个人学习使用
+          程序不含第三方试题 · 导入内容的版权归原权利人
         </span>
       </div>
     </div>

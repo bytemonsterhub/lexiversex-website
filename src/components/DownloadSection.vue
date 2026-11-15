@@ -9,7 +9,7 @@
       <span class="eyebrow">Get Started</span>
       <h2 class="dl__title">今晚就可以<br /><em>点亮第一颗星。</em></h2>
       <p class="dl__lede">
-        下载、解压、双击。不需要注册账号，不需要导入题库，第一次打开时 198 套真题已经在里面了。
+        下载、解压、双击。不需要注册账号，第一次打开就有 14 个原创训练包当示例，其余材料你自己导入。
       </p>
 
       <div class="dl__actions">
@@ -30,7 +30,7 @@
           </svg>
           下载 Windows 版
         </a>
-        <span class="dl__meta mono">v0.1.0 · 96 MB · x64</span>
+        <span class="dl__meta mono">v0.1.0 · 81 MB · x64</span>
       </div>
 
       <p class="dl__tip">

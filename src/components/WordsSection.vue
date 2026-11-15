@@ -13,9 +13,12 @@ const ladder = [
 ]
 
 const lists = [
-  { name: '四级', count: 1616, note: 'CET-4' },
-  { name: '六级', count: 2143, note: 'CET-6' },
-  { name: '考研', count: 1199, note: 'POSTGRAD' }
+  { name: '学术与论证', count: 6, note: 'ARGUMENT' },
+  { name: '环境与城市', count: 6, note: 'CITY' },
+  { name: '科技与媒介', count: 6, note: 'TECH' },
+  { name: '经济与工作', count: 6, note: 'WORK' },
+  { name: '情绪与人际', count: 6, note: 'PEOPLE' },
+  { name: '构词线索', count: 6, note: 'MORPH' }
 ]
 </script>
 
@@ -26,17 +29,17 @@ const lists = [
         <span class="eyebrow">Lexicon &amp; Drill</span>
         <h2 class="h2">认得、写得出，<em>才算真的会。</em></h2>
         <p class="lede">
-          2558 个词不是从词典抄来的，是从 9196 道真题里数出来的 —— 每个词都带着它在真题里出现过的句子数。
-          词频高的先学，做过真题的词优先复习。
+          词表是自建的：36 个词条按六个主题编排，释义、例句、构词线索全部原创撰写。
+          背单词与词网共用这一份词源，你也能直接编辑 <span class="mono">data/lexicon.json</span> 往里加词。
         </p>
       </header>
 
       <div class="words__split">
         <div class="words__copy" v-reveal>
-          <h3 class="h3">词库按真题句频排序</h3>
+          <h3 class="h3">按主题与 CEFR 编排</h3>
           <p>
-            常见词书按字母表排版，结果你背了三个月的 abandon。这里按「在真题里出现过多少句」排序，
-            每个词条各自标注 CEFR 等级与词性，配合 A1 到 C1 的分段筛选，你可以只啃最该啃的那一档。
+            同一个主题的词聚在一起看，配上例句与构词线索；每个词条标注 CEFR 等级与词性，
+            配合 A1 到 C1 的分段筛选，你可以只啃最该啃的那一档。
           </p>
 
           <ul class="lists">
@@ -47,7 +50,7 @@ const lists = [
             </li>
           </ul>
 
-          <p class="words__foot mono">三级词库合计 4958 条 · 去重后 2558 词</p>
+          <p class="words__foot mono">六个主题合计 36 条 · 释义与例句均为原创</p>
         </div>
 
         <div class="words__shot" v-reveal>
@@ -55,8 +58,8 @@ const lists = [
             <img
               :src="asset('img/lexicon.webp')"
               width="1320"
-              height="800"
-              alt="真题词库：按句频排序的词条列表，带 CEFR 等级标签"
+              height="796"
+              alt="词网：按主题编排的原创词条，带 CEFR 等级标签"
               loading="lazy"
             />
           </div>
@@ -94,8 +97,8 @@ const lists = [
             <img
               :src="asset('img/words-card.webp')"
               width="1320"
-              height="730"
-              alt="背单词闪卡：翻面后显示单词与全部释义"
+              height="796"
+              alt="背单词闪卡：翻面后看完整释义"
               loading="lazy"
             />
           </div>
@@ -110,7 +113,7 @@ const lists = [
             <img
               :src="asset('img/words-spell.webp')"
               width="1320"
-              height="650"
+              height="796"
               alt="默写：给出释义拼写单词，答错时逐字母标出差异"
               loading="lazy"
             />

@@ -21,7 +21,7 @@ onMounted(() => {
 onBeforeUnmount(() => window.removeEventListener('scroll', onScroll))
 
 const links = [
-  { href: '#stations', label: '星港与真题' },
+  { href: '#stations', label: '星港与内容' },
   { href: '#words', label: '词汇' },
   { href: '#explain', label: '解析' },
   { href: '#tech', label: '工程' }

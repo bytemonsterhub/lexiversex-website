@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { asset } from '../lib/asset'
 /**
- * 解析区：产品最硬的一块差异。
+ * 解析区：材料自带解析时怎么呈现。
  *
  * 布局改成「图在上、结构在下」—— 左右分栏时截图被压到 600px 宽，
  * 里面的字全糊了；这一节的说服力全在图里，必须让它占满。
@@ -22,11 +22,11 @@ const parts = [
   <section id="explain" class="explain">
     <div class="wrap">
       <header class="explain__head" v-reveal>
-        <span class="eyebrow">Every Question, Explained</span>
-        <h2 class="h2">不是给个答案，<br /><em>是把这道题拆开给你看。</em></h2>
+        <span class="eyebrow">Explain As Given</span>
+        <h2 class="h2">材料带的解析，<br /><em>原样摊开给你看。</em></h2>
         <p class="lede">
-          8645 道客观题，逐题都有解析。不是「选 A 因为 A 对」这种废话，
-          而是把定位、信号、替换、排除一条条摆出来 —— 做错一道题，等于读完一篇小讲义。
+          你导入的材料里如果带【答案】【定位】【排除】这类解析块，做题时点开就能看，
+          不用跳出去翻原文。程序不改写、不编造，只按行首标签轻量着色 —— 材料没写解析，就只给判分。
         </p>
       </header>
 
@@ -34,32 +34,32 @@ const parts = [
         <div class="shot">
           <img
             :src="asset('img/explain.webp')"
-            width="1310"
-            height="838"
-            alt="做题界面：题卡下方已展开逐题解析，含题目、翻译、答案、定位、信号、替换、排除"
+            width="1320"
+            height="796"
+            alt="做题界面：题卡下方展开材料自带的解析，含答案、定位、信号、排除"
             loading="lazy"
           />
         </div>
         <figcaption>
-          未交卷也能展开解析 · 中位长度 735 字
+          未交卷也能展开 · 解析内容完全来自材料本身
         </figcaption>
       </figure>
 
       <div class="explain__body">
         <div class="cover" v-reveal>
           <div class="cover__top">
-            <b class="mono">8645<em>/8645</em></b>
-            <span>客观题解析覆盖</span>
+            <b class="mono">100<em>%</em></b>
+            <span>解析原样保留</span>
           </div>
           <div class="cover__bar"><i /></div>
           <dl class="cover__kv">
             <div>
               <dt>主观题</dt>
-              <dd>551 道，对照参考不硬判分</dd>
+              <dd>不硬判分，标「对照参考」</dd>
             </div>
             <div>
               <dt>来源</dt>
-              <dd>随包分发的 198 套真题</dd>
+              <dd>你自己导入的材料</dd>
             </div>
           </dl>
         </div>

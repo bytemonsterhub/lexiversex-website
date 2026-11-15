@@ -17,7 +17,7 @@ import { asset } from '../lib/asset'
       </h1>
 
       <p class="hero__lede intro-rise" style="animation-delay: 0.14s">
-        198 套历年真题、9196 道题、2558 个核心词，连同逐题解析与间隔重复，
+        把你的材料变成能做的卷子：导入、精读、判分、复盘，配上间隔重复与逐题解析，
         全部装进一台<span class="nowrap">断网也能用</span>的桌面应用。
       </p>
 
@@ -43,7 +43,7 @@ import { asset } from '../lib/asset'
         <img
           :src="asset('img/hero-galaxy.webp')"
           width="1320"
-          height="838"
+          height="796"
           alt="LexiVerse X 星港首页：七个训练站点悬浮在星图上"
           fetchpriority="high"
         />

@@ -14,12 +14,12 @@ const active = ref(0)
 let ticking = false
 
 const stations = [
-  { name: '四级星港', en: 'CET-4', meta: '81 套 · 3545 题', hue: 32 },
-  { name: '六级星港', en: 'CET-6', meta: '79 套 · 3487 题', hue: 214 },
-  { name: '考研星港', en: 'POSTGRAD', meta: '49 套 · 2252 题', hue: 268 },
-  { name: '精练苍穹', en: 'ELITE', meta: '3 套 · 60 题', hue: 44 },
+  { name: '四级星港', en: 'CET-4', meta: '5 包 · 68 题', hue: 32 },
+  { name: '六级星港', en: 'CET-6', meta: '3 包 · 30 题', hue: 214 },
+  { name: '考研星港', en: 'POSTGRAD', meta: '3 包 · 40 题', hue: 268 },
+  { name: '精练苍穹', en: 'ELITE', meta: '3 卷 · 60 题', hue: 44 },
   { name: '模拟星港', en: 'MOCK TEST', meta: '整卷计时', hue: 352 },
-  { name: '词网', en: 'LEXICON', meta: '4958 条词频', hue: 186 },
+  { name: '词网', en: 'LEXICON', meta: '36 个原创词条', hue: 186 },
   { name: '星轨', en: 'ORBIT', meta: '错的题再回来', hue: 210 }
 ]
 
@@ -28,7 +28,7 @@ const steps = [
     no: '01',
     kicker: 'STARPORT',
     title: '七个站点，一张星图',
-    body: '四级、六级、考研、精练、模考、词网、星轨 —— 不是七个菜单，是七个训练站点。它们共享同一份进度：在哪个站练过、卡在哪，整张图看得见。',
+    body: '星港、精练、模考、词网、星轨 —— 不是一堆菜单，是几个训练站点。它们共享同一份进度：在哪个站练过、卡在哪，整张图看得见。',
     points: ['跨站点统一进度', '每个站点独立胜率', '打开就是上次离开的地方'],
     kind: 'orbit' as const,
     w: 0,
@@ -37,14 +37,14 @@ const steps = [
   {
     no: '02',
     kicker: 'LIBRARY',
-    title: '198 套真题，已经躺在库里',
-    body: '不用下载、不用导入、不用找网盘链接。首次启动就把 198 套历年真题铺进本地，按星港、难度、能力维度分好，跟原创训练包混在同一个库里。',
-    points: ['212 个训练包 · 9394 道题', '按 CEFR 与能力双维筛选', '整套练习或单篇拆练'],
+    title: '题库归你，导入即练',
+    body: '程序不内置第三方试题，随包只有 14 个原创训练包当示例。把文字贴进来，或者直接丢一个文件夹，它就被解析成可以做的卷子 —— 只写本机，不上传。',
+    points: ['14 个原创包 · 198 道题', '粘贴文本或批量导入文件夹', '按 CEFR 与能力双维筛选'],
     kind: 'img' as const,
     img: asset('img/library.webp'),
-    w: 1310,
-    h: 838,
-    alt: '训练库：212 个训练包、9394 道题，按星港与难度筛选'
+    w: 1320,
+    h: 796,
+    alt: '训练库：原创训练包按星港与难度筛选'
   },
   {
     no: '03',
@@ -55,7 +55,7 @@ const steps = [
     kind: 'img' as const,
     img: asset('img/practice.webp'),
     w: 1320,
-    h: 838,
+    h: 796,
     alt: '做题界面：左侧听力音频轨与原文，右侧题卡'
   }
 ]

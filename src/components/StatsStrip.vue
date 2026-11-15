@@ -2,10 +2,10 @@
 import CountUp from './CountUp.vue'
 
 const items = [
-  { value: 198, suffix: '套', label: '历年真题', note: '四级 / 六级 / 考研' },
-  { value: 9196, suffix: '题', label: '题目总量', note: '客观 8645 · 主观 551' },
-  { value: 2558, suffix: '词', label: '核心词汇', note: '按真题句频排序' },
-  { value: 100, suffix: '%', label: '解析覆盖', note: '客观题逐题有据' }
+  { value: 14, suffix: '包', label: '原创训练包', note: '随包示例 · 198 道题' },
+  { value: 36, suffix: '条', label: '自建词条', note: '六个主题 · 释义原创' },
+  { value: 0, suffix: '套', label: '第三方试题', note: '题库由你自己导入' },
+  { value: 100, suffix: '%', label: '本地存储', note: '不联网也能练' }
 ]
 </script>
 
